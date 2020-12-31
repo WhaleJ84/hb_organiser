@@ -1,4 +1,4 @@
-# hb-organiser
+# hb_organiser
 
 Organises Humble Bundle bundles based on their platform.
 Designed to work around the structure created via Talonius' [hb-downloader](https://github.com/talonius/hb-downloader).
@@ -17,9 +17,6 @@ Duplicate items across different bundles will be ignored, all the books will be 
 The immediate goal is to put out something working.
 To keep development more direct I'll outline pressing matters below:
 
-- Publish Pip module
-    - At the moment it currently runs as a series of scripts.
-      This needs to change ASAP.
 - Cut down on operation times
     - Organising thousands of files in one go is very time-consuming - especially when working with game bundles.
       Speeding this up will save millions of hours of collective time over the years via optimisation.

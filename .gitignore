@@ -1,1 +1,3 @@
-.pypirc
+.coverage
+hb_organiser/config.py
+hb_organiser.log

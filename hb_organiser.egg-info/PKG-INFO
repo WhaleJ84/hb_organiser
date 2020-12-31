@@ -1,12 +1,12 @@
 Metadata-Version: 2.1
 Name: hb-organiser
-Version: 0.0.1
+Version: 0.0.5
 Summary: Organises Humble Bundle bundles based on their platform.
-Home-page: https://github.com/WhaleJ84/hb-organiser
+Home-page: https://github.com/WhaleJ84/hb_organiser
 Author: James Whale
 Author-email: james@james-whale.com
 License: UNKNOWN
-Description: # hb-organiser
+Description: # hb_organiser
         
         Organises Humble Bundle bundles based on their platform.
         Designed to work around the structure created via Talonius' [hb-downloader](https://github.com/talonius/hb-downloader).

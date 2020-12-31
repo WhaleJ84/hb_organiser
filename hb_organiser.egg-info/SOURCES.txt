@@ -1,7 +1,16 @@
 README.md
 setup.py
-hb-organiser/__init__.py
+hb_organiser/__init__.py
+hb_organiser/bundle_objects.py
+hb_organiser/check.py
+hb_organiser/cli.py
+hb_organiser/config.py
+hb_organiser/logger.py
+hb_organiser/organiser.py
 hb_organiser.egg-info/PKG-INFO
 hb_organiser.egg-info/SOURCES.txt
 hb_organiser.egg-info/dependency_links.txt
+hb_organiser.egg-info/entry_points.txt
 hb_organiser.egg-info/top_level.txt
+tests/__init__.py
+tests/test_checks.py
