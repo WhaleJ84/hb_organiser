@@ -19,5 +19,10 @@ setuptools.setup(
         "Operating System :: POSIX :: Linux",
         "Natural Language :: English",
     ],
+    entry_points={
+        'console_scripts': [
+            'hb_organiser=hb_organiser.cli',
+        ],
+    },
     python_requires='>=3.8',
 )
