@@ -15,20 +15,20 @@ class HBOrganiserTestCase(TestCase):
         self.assertFalse(source_exists('/home/fake_user/fake_dir/'))
 
     def test_check_source_exists_returns_true_on_relative_good_path(self):
-        self.assertTrue(source_exists('library/'))
+        self.assertTrue(source_exists('tests/library/'))
 
     def test_check_source_exists_returns_true_on_absolute_good_path(self):
         self.assertTrue(source_exists('/'))
 
     # === [ check_source_levels ] === #
     def test_check_source_levels_returns_false_on_no_platform(self):
-        self.assertFalse(source_levels('library/bundle/'))
+        self.assertFalse(source_levels('tests/library/bundle/'))
 
     def test_check_source_levels_returns_false_on_no_item(self):
-        self.assertFalse(source_levels('library/bundle/item/'))
+        self.assertFalse(source_levels('tests/library/bundle/item/'))
 
     def test_check_source_levels_returns_false_on_no_bundle(self):
-        self.assertFalse(source_levels('library/bundle/item/platform/'))
+        self.assertFalse(source_levels('tests/library/bundle/item/platform/'))
 
     def test_check_source_levels_return_true_on_good_path(self):
-        self.assertTrue(source_levels('library/'))
+        self.assertTrue(source_levels('tests/library/'))
