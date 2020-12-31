@@ -1,4 +1,4 @@
-# hb-organiser
+# hb_organiser
 
 Organises Humble Bundle bundles based on their platform.
 Designed to work around the structure created via Talonius' [hb-downloader](https://github.com/talonius/hb-downloader).
