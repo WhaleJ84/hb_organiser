@@ -6,7 +6,7 @@ from pathlib import Path
 from os import listdir
 from os.path import isdir, abspath, join
 
-from .bundle_objects import Library, Bundle, Item, File
+from hb_organiser.bundle_objects import Library, Bundle, Item, File
 
 logger = logging.getLogger(__name__)
 

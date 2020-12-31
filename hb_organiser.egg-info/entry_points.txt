@@ -1,0 +1,3 @@
+[console_scripts]
+hb_organiser = hb_organiser.cli:cli
+

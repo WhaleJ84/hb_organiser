@@ -6,8 +6,8 @@ from os.path import isdir, isfile, join
 from pathlib import Path
 from shutil import copyfile
 
-from .bundle_objects import Library, Bundle, Item, File
-from .check import number_of_items, source_levels
+from hb_organiser.bundle_objects import Library, Bundle, Item, File
+from hb_organiser.check import number_of_items, source_levels
 
 
 class HBOrganiser:

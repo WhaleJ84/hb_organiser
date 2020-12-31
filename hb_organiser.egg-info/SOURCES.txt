@@ -10,6 +10,7 @@ hb_organiser/organiser.py
 hb_organiser.egg-info/PKG-INFO
 hb_organiser.egg-info/SOURCES.txt
 hb_organiser.egg-info/dependency_links.txt
+hb_organiser.egg-info/entry_points.txt
 hb_organiser.egg-info/top_level.txt
 tests/__init__.py
 tests/test_checks.py

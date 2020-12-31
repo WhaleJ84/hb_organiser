@@ -3,7 +3,7 @@ Builds the logger to be shared across the project.
 """
 import logging
 
-from .config import Config
+from hb_organiser.config import Config
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(
