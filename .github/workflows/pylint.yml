@@ -25,7 +25,9 @@ jobs:
           python-version: '3.x'
 
       - name: Install pylint
-        run: pip install pylint
+        run: |
+        pip install --uppgrade pip
+        pip install pylint
 
       - name: Run pylint
         run: pylint hb_organiser/
