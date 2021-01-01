@@ -1,15 +1,14 @@
 ---
-name: Unittests
+name: Pylint
 'on':
   pull_request:
   push:
     branches:
       - main
       - ci-test
-
 jobs:
   test:
-    name: Unittest
+    name: Pylint
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -25,16 +24,11 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install coverage
+      - name: Install pylint
         run: |
           pip install --upgrade pip
-          pip install coverage
+          pip install pylint
 
-      - name: Run unit tests
-        run: coverage run -m unittest discover
-
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
-        with:
-          flags: unittests
+      - name: Run pylint
+        run: pylint hb_organiser/
 ...
