@@ -38,7 +38,7 @@ class HBOrganiserTestCase(TestCase):
 
     # === [ number_of_items ] === #
     def test_number_of_items_returns_zero_ignoring_directories(self):
-        self.assertEqual(number_of_items('tests/test_libraries/library/', ['all']), 0)
+        self.assertEqual(number_of_items('tests/test_libraries/library/', ['all']), 1)
 
     def test_number_of_items_returns_one_ignoring_md5_and_directories(self):
         self.assertEqual(number_of_items('tests/test_libraries/other_library/', ['all']), 1)

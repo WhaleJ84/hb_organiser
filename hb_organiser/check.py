@@ -63,9 +63,12 @@ def source_levels(source, target=None):
         test = 'platform'
         level = item
         if target is not None:
-            abspath(f"{level}/{target}")
+            platform = abspath(f"{level}/{target}/")
         else:
-            Path(list(level.glob('*'))[0])
+            platform = Path(list(level.glob('*'))[0])
+            if not isdir(platform):
+                print(f"ERROR: detecting file: {platform} as platform directory")
+                return False
         return True
     except IndexError:
         print(f"ERROR: could not determine {test} directory in \"{level}\"")
