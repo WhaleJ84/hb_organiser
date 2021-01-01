@@ -15,7 +15,9 @@ class HBOrganiser:
     Main program. Contains the methods used to organise the library.
     """
     def __init__(self, source, destination=None, *filtered_platforms):  # pylint: disable=keyword-arg-before-vararg
+        print("INFO: Connecting to library\r", end="")
         self.library = Library(source.split('/')[-1], source)
+        print("DONE: Connecting to library\r", end="", flush=True)
         self.destination = destination
 
         # TODO: clean this up. by default it would be a list within a list: [['all']]
@@ -81,7 +83,6 @@ class HBOrganiser:
         :rtype: bool
         """
         try:  # pylint: disable=too-many-nested-blocks
-            print(f"library items: {self.tasks}")
             task = 1
             # Go through every bundle in library
             for bundle in self.library.contents:

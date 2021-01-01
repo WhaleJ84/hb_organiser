@@ -12,6 +12,11 @@ from hb_organiser.logger import logger
 
 
 def cli():
+    """
+    Contains the code pertaining to the CLI. All back-end logic is located elsewhere.
+
+    :return:
+    """
     parser = argparse.ArgumentParser(description="organises humble bundle bundles based on their platform.")
     parser.add_argument(
         "platform", nargs="+", type=str,

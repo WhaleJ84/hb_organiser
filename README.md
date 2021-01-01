@@ -9,6 +9,8 @@ Organises Humble Bundle bundles based on their platform.
 Designed to work around the structure created via Talonius' [hb-downloader](https://github.com/talonius/hb-downloader).
 Other automated HB downloaders may not work with this out of the box.
 
+![Copying files](media/hb_organiser_demo.png)
+
 ## Install
 
 As it's packaged as a Pip module, `python3-pip` is required. Run `pip install --user hb-organiser` to install only for your user and omit `--user` to install for all. See `hb_organiser -h` for help.
