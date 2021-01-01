@@ -63,9 +63,12 @@ def source_levels(source, target=None):
         test = 'platform'
         level = item
         if target is not None:
-            abspath(f"{level}/{target}")
+            platform = abspath(f"{level}/{target}/")
         else:
-            Path(list(level.glob('*'))[0])
+            platform = Path(list(level.glob('*'))[0])
+            if not isdir(platform):
+                print(f"ERROR: detecting file: {platform} as platform directory")
+                return False
         return True
     except IndexError:
         print(f"ERROR: could not determine {test} directory in \"{level}\"")
@@ -83,7 +86,9 @@ def number_of_items(source, filters):
     :return:
     :rtype: int
     """
+    print("[ / ] INFO: Calculating relevant items in library\r", end="", flush=True)
     library = Library(source.split('/')[-1], source)
+    print(f"[ /{library.items}] INFO: Calculating relevant items in library\r", end="", flush=True)
     items = 0
 
     for bundle in library.contents:
@@ -100,4 +105,5 @@ def number_of_items(source, filters):
                     if current_file.platform in filters and current_file.filetype != 'md5'\
                             or 'all' in filters and current_file.filetype != 'md5':
                         items += 1
+    print(f"[{items}/{library.items}] DONE: Calculating relevant items in library", flush=True)
     return items

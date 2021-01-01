@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="hb_organiser",
-    version="0.0.5",
+    version="0.0.6",
     author="James Whale",
     author_email="james@james-whale.com",
     description="Organises Humble Bundle bundles based on their platform.",
