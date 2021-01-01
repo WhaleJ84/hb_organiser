@@ -26,7 +26,7 @@ jobs:
 
       - name: Install pylint
         run: |
-        pip install --uppgrade pip
+        pip install --upgrade pip
         pip install pylint
 
       - name: Run pylint
