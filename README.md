@@ -1,8 +1,16 @@
-# hb_organiser
+# hb\_organiser
+
+[![PyPI](https://img.shields.io/pypi/v/hb-organiser.svg)](https://pypi.python.org/pypi/hb-organiser)
+![Unittests](https://github.com/WhaleJ84/hb_organiser/workflows/Unittests/badge.svg)
+[![codecov](https://codecov.io/gh/WhaleJ84/hb_organiser/branch/main/graph/badge.svg?token=IJSKBUAP81)](https://codecov.io/gh/WhaleJ84/hb_organiser)
 
 Organises Humble Bundle bundles based on their platform.
 Designed to work around the structure created via Talonius' [hb-downloader](https://github.com/talonius/hb-downloader).
 Other automated HB downloaders may not work with this out of the box.
+
+## Install
+
+As it's packaged as a Pip module, `python3-pip` is required. Run `pip install --user hb-organiser` to install only for your user and omit `--user` to install for all. See `hb_organiser -h` for help.
 
 ## Why is this needed?
 
@@ -11,6 +19,14 @@ I would like to have all these books hosted via a [Calibre](https://calibre-eboo
 
 To alleviate this issue, I'm making this script that will organise my libraries with a click of a key.
 Duplicate items across different bundles will be ignored, all the books will be easily discovered via Calibre, and my sanity will be saved.
+
+## Features
+
+- Calculates number of tasks so that you're not left in the dark and can tell the progress.
+
+- A crude way of tracking files being corrupted via a cancelled transfer by logging what is being operated upon and clearing it once complete. If it doesn't get cleared, chances are it was corrupted.
+
+- Skips copying of duplicate files by checking for its existence first (although there is a chance it may skip newer files such as updated editions of books (see [issue 6](https://github.com/WhaleJ84/hb_organiser/issues/6))).
 
 ## Immediate roadmap
 
