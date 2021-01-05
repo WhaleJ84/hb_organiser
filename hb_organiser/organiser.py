@@ -61,7 +61,21 @@ class HBOrganiser:
         :type task: str
         :return:
         """
-        if not isfile(destination) or source in open('queue.txt'):
+        if not isfile(destination):
+            # TODO: Fix this duplicate code section.
+            # Was nastily thrown in to fix a bug
+            try:
+                if source in open('queue.txt'):
+                    print(f"{task} COPY: {source} {destination}")
+                    log = open('queue.txt', 'w')
+                    log.write(source)
+                    log.close()
+                    copyfile(source, destination)
+                    log = open('queue.txt', 'w')
+                    log.write('')
+                    log.close()
+            except FileNotFoundError:
+                pass
             print(f"{task} COPY: {source} {destination}")
             log = open('queue.txt', 'w')
             log.write(source)
