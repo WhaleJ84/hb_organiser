@@ -1,6 +1,7 @@
 # hb\_organiser
 
 [![PyPI](https://img.shields.io/pypi/v/hb-organiser.svg)](https://pypi.python.org/pypi/hb-organiser)
+[![image](https://img.shields.io/pypi/pyversions/hb-organiser.svg)](https://python.org/pypi/hb-organiser)
 ![Unittests](https://github.com/WhaleJ84/hb_organiser/workflows/Unittests/badge.svg)
 [![codecov](https://codecov.io/gh/WhaleJ84/hb_organiser/branch/main/graph/badge.svg?token=IJSKBUAP81)](https://codecov.io/gh/WhaleJ84/hb_organiser)
 ![Pylint](https://github.com/WhaleJ84/hb_organiser/workflows/Pylint/badge.svg)
