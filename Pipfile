@@ -10,6 +10,7 @@ setuptools = "*"
 wheel = "*"
 pylint = "*"
 twine = "*"
+coverage = "*"
 
 [requires]
 python_version = "3.8"
