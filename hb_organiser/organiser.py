@@ -135,5 +135,5 @@ class HBOrganiser:
                                     task += 1
             return True
         except KeyboardInterrupt:
-            print('INFO: Manual intervention. exiting.')
+            print('\nINFO: Manual intervention. exiting.')
             return False

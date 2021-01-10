@@ -11,7 +11,7 @@ from hb_organiser.organiser import HBOrganiser
 from hb_organiser.logger import logger
 
 
-def cli(args):
+def cli(args=None):
     """
     Contains the code pertaining to the CLI. All back-end logic is located elsewhere.
 
@@ -35,11 +35,14 @@ def cli(args):
         help="destination directory of sorted bundles. overrides location specified in config file. "
              "if no destination is given, a dry run will occur - displaying what would have happened."
     )
-    # args = parser.parse_args()
-    return parser.parse_args(args)
+
+    if args is not None:
+        args = parser.parse_args(args)
+    else:
+        args = parser.parse_args()
 
 
-def verify_args(args):
+# def verify_args(args):
     if args.source:
         source = args.source
     else:
@@ -68,5 +71,4 @@ def verify_args(args):
 
 
 if __name__ == '__main__':
-    arguments = cli(argv[1:])
-    verify_args(arguments)
+    cli(argv[1:])
