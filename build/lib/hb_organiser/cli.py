@@ -3,7 +3,7 @@
 Contains the code pertaining to the CLI. All back-end logic is located elsewhere.
 """
 import argparse
-from sys import exit as sys_exit
+from sys import argv
 
 from hb_organiser.check import source_exists
 from hb_organiser.config import Config
@@ -11,7 +11,7 @@ from hb_organiser.organiser import HBOrganiser
 from hb_organiser.logger import logger
 
 
-def cli():
+def cli(args=None):
     """
     Contains the code pertaining to the CLI. All back-end logic is located elsewhere.
 
@@ -35,8 +35,14 @@ def cli():
         help="destination directory of sorted bundles. overrides location specified in config file. "
              "if no destination is given, a dry run will occur - displaying what would have happened."
     )
-    args = parser.parse_args()
 
+    if args is not None:
+        args = parser.parse_args(args)
+    else:
+        args = parser.parse_args()
+
+
+# def verify_args(args):
     if args.source:
         source = args.source
     else:
@@ -58,10 +64,11 @@ def cli():
             logger.debug('No destination given via CLI or config. Defaulting to None')
 
     if not source_exists(source):
-        sys_exit(1)
+        return False
     organiser = HBOrganiser(source, destination, args.platform)
     organiser.loop_through_bundles()
+    return True
 
 
 if __name__ == '__main__':
-    cli()
+    cli(argv[1:])

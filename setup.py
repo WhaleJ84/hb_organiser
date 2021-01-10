@@ -1,20 +1,23 @@
-import setuptools
+from setuptools import find_packages, setup
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
-setuptools.setup(
+setup(
     name="hb_organiser",
-    version="1.0.7",
+    version="1.0.8",
     author="James Whale",
     author_email="james@james-whale.com",
     description="Organises Humble Bundle bundles based on their platform.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/WhaleJ84/hb_organiser",
-    packages=setuptools.find_packages(),
+    packages=find_packages(),
     classifiers=[
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
         "License :: OSI Approved :: MIT License",
         "Operating System :: POSIX :: Linux",
         "Natural Language :: English",
@@ -24,5 +27,5 @@ setuptools.setup(
             'hb_organiser=hb_organiser.cli:cli',
         ],
     },
-    python_requires='>=3.8',
+    python_requires='>=3.6',
 )

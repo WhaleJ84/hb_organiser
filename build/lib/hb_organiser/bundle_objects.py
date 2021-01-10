@@ -20,6 +20,12 @@ class Base:
         """
         self.name = name
         self.path = join(path, self.name)
+
+        # FileNotFound error thrown if `/path/to/file` given instead of `/path/to/file/`
+        # As it creates `/path/to/file/file`. This appears to resolve that
+        if self.path.split('/')[-2] == self.name:
+            self.path = path
+
         self.items = len(glob(f"{self.path}/**", recursive=True))-1
 
 

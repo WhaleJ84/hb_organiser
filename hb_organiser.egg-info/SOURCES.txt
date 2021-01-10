@@ -14,3 +14,4 @@ hb_organiser.egg-info/entry_points.txt
 hb_organiser.egg-info/top_level.txt
 tests/__init__.py
 tests/test_checks.py
+tests/test_cli.py

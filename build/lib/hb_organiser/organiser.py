@@ -44,8 +44,7 @@ class HBOrganiser:
             print(f"{task} MKDIR: {destination}")
             Path(destination).mkdir(parents=True, exist_ok=True)
 
-    @staticmethod
-    def copy_file(source, destination, task=None):
+    def copy_file(self, source, destination, task=None):
         """
         Copies the source to the destination.
         Before each operation, the source file is logged.
@@ -61,31 +60,39 @@ class HBOrganiser:
         :type task: str
         :return:
         """
-        if not isfile(destination):
-            # TODO: Fix this duplicate code section.
-            # Was nastily thrown in to fix a bug
-            try:
-                if source in open('queue.txt'):
-                    print(f"{task} COPY: {source} {destination}")
-                    log = open('queue.txt', 'w')
-                    log.write(source)
-                    log.close()
-                    copyfile(source, destination)
-                    log = open('queue.txt', 'w')
-                    log.write('')
-                    log.close()
-            except FileNotFoundError:
-                pass
-            print(f"{task} COPY: {source} {destination}")
-            log = open('queue.txt', 'w')
-            log.write(source)
-            log.close()
-            copyfile(source, destination)
-            log = open('queue.txt', 'w')
-            log.write('')
-            log.close()
-        else:
-            print(f"{task} SKIP: {destination}")
+        complete = 'DONE'
+        try:
+            if source not in open('queue.txt') and not isfile(destination):
+                print(f"{task} COPYING: {source} {destination}\r", end="", flush=True)
+                complete = 'COPIED'
+                log = open('queue.txt', 'w')
+                log.write(source)
+                log.close()
+            elif source in open('queue.txt'):
+                print(f"{task} RE-COPING: {source} {destination}\r", end="", flush=True)
+                complete = 'RE-COPIED'
+            else:
+                print(f"{task} SKIPPED: {destination}")
+                return True
+        except FileNotFoundError:
+            print(f"{task} INFO: Creating queue.txt")
+            open('queue.txt', 'x')
+            self.copy_file(source, destination, task)
+
+        copyfile(source, destination)
+        print(f"{task} {complete}: {source} {destination}\r", flush=True)
+
+        entries = []
+        log = open('queue.txt')
+        for entry in log:
+            if source not in entry:
+                entries.append(entry)
+        log.close()
+
+        log = open('queue.txt', 'w')
+        log.writelines(entries)
+        log.close()
+        return True
 
     def loop_through_bundles(self):
         """
@@ -128,5 +135,5 @@ class HBOrganiser:
                                     task += 1
             return True
         except KeyboardInterrupt:
-            print('INFO: Manual intervention. exiting.')
+            print('\nINFO: Manual intervention. exiting.')
             return False

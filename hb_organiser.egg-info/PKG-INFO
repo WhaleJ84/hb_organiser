@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: hb-organiser
-Version: 1.0.7
+Version: 1.0.8
 Summary: Organises Humble Bundle bundles based on their platform.
 Home-page: https://github.com/WhaleJ84/hb_organiser
 Author: James Whale
@@ -9,15 +9,16 @@ License: UNKNOWN
 Description: # hb\_organiser
         
         [![PyPI](https://img.shields.io/pypi/v/hb-organiser.svg)](https://pypi.python.org/pypi/hb-organiser)
-        ![Unittests](https://github.com/WhaleJ84/hb_organiser/workflows/Unittests/badge.svg)
+        [![image](https://img.shields.io/pypi/pyversions/hb-organiser.svg)](https://python.org/pypi/hb-organiser)
+        [![Unittests](https://github.com/WhaleJ84/hb_organiser/workflows/Unittests/badge.svg)](https://github.com/WhaleJ84/hb_organiser/actions?query=workflow%3AUnittests)
         [![codecov](https://codecov.io/gh/WhaleJ84/hb_organiser/branch/main/graph/badge.svg?token=IJSKBUAP81)](https://codecov.io/gh/WhaleJ84/hb_organiser)
-        ![Pylint](https://github.com/WhaleJ84/hb_organiser/workflows/Pylint/badge.svg)
+        [![Pylint](https://github.com/WhaleJ84/hb_organiser/workflows/Pylint/badge.svg)](https://github.com/WhaleJ84/hb_organiser/actions?query=workflow%3APylint)
         
         Organises Humble Bundle bundles based on their platform.
         Designed to work around the structure created via Talonius' [hb-downloader](https://github.com/talonius/hb-downloader).
         Other automated HB downloaders may not work with this out of the box.
         
-        ![Copying files](media/hb_organiser_demo.png)
+        ![An image of hb-organiser copying files](https://i.imgur.com/Ti1wuri.png)
         
         ## Install
         
@@ -61,9 +62,12 @@ Description: # hb\_organiser
               This could be useful in other situations such as organising music.
         
 Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
 Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: POSIX :: Linux
 Classifier: Natural Language :: English
-Requires-Python: >=3.8
+Requires-Python: >=3.6
 Description-Content-Type: text/markdown
