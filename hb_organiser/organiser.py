@@ -62,16 +62,20 @@ class HBOrganiser:
         """
         complete = 'DONE'
         try:
-            if source not in open('queue.txt') and not isfile(destination):
+            log = open('queue.txt')
+            if source not in log and not isfile(destination):
+                log.close()
                 print(f"{task} COPYING: {source} {destination}\r", end="", flush=True)
                 complete = 'COPIED'
                 log = open('queue.txt', 'w')
                 log.write(source)
                 log.close()
-            elif source in open('queue.txt'):
+            elif source in log:
+                log.close()
                 print(f"{task} RE-COPING: {source} {destination}\r", end="", flush=True)
                 complete = 'RE-COPIED'
             else:
+                log.close()
                 print(f"{task} SKIPPED: {destination}")
                 return True
         except FileNotFoundError:
