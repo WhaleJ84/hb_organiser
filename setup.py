@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="hb_organiser",
-    version="1.0.8",
+    version="1.0.9",
     author="James Whale",
     author_email="james@james-whale.com",
     description="Organises Humble Bundle bundles based on their platform.",
@@ -24,7 +24,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'hb_organiser=hb_organiser.cli:cli',
+            'hb_organiser=hb_organiser.cli:main',
         ],
     },
     python_requires='>=3.6',

@@ -52,8 +52,7 @@ def cli(args=None):
 
     if args is not None:
         return parser.parse_args(args)
-    else:
-        return parser.parse_args()
+    return parser.parse_args()
 
 
 def read_config(path):
@@ -120,4 +119,3 @@ if __name__ == '__main__':
     if arg[0] is not None:
         organiser = HBOrganiser(arg[0], arg[1], arg[2])
         organiser.loop_through_bundles()
-

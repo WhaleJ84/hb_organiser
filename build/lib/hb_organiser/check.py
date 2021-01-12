@@ -1,14 +1,11 @@
 """
 Contains methods used to check given input before operating upon it.
 """
-import logging
 from pathlib import Path
 from os import listdir
 from os.path import isdir, abspath, join
 
 from hb_organiser.bundle_objects import Library, Bundle, Item, File
-
-logger = logging.getLogger(__name__)
 
 
 def source_exists(source):
@@ -27,7 +24,7 @@ def source_exists(source):
             print("ERROR: no path given")
             return False
         return True
-    print(f"ERROR: specified source does not exist: {source}")
+    print(f"ERROR: specified source does not exist: {abspath(source)}")
     return False
 
 
