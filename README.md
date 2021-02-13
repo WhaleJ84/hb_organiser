@@ -10,7 +10,7 @@ Organises Humble Bundle bundles based on their platform.
 Designed to work around the structure created via Talonius' [hb-downloader](https://github.com/talonius/hb-downloader).
 Other automated HB downloaders may not work with this out of the box.
 
-![An image of hb-organiser copying files](https://i.imgur.com/Ti1wuri.png)
+![An image of hb-organiser copying files](https://james-whale.com/static/media/hb_organiser_demo.png)
 
 ## Install
 
