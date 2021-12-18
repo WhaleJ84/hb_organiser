@@ -2,9 +2,9 @@
 
 [![PyPI](https://img.shields.io/pypi/v/hb-organiser.svg)](https://pypi.python.org/pypi/hb-organiser)
 [![image](https://img.shields.io/pypi/pyversions/hb-organiser.svg)](https://python.org/pypi/hb-organiser)
+[![Downloads](https://pepy.tech/badge/hb-organiser)](https://pepy.tech/project/hb-organiser)
 [![Unittests](https://github.com/WhaleJ84/hb_organiser/workflows/Unittests/badge.svg)](https://github.com/WhaleJ84/hb_organiser/actions?query=workflow%3AUnittests)
 [![codecov](https://codecov.io/gh/WhaleJ84/hb_organiser/branch/main/graph/badge.svg?token=IJSKBUAP81)](https://codecov.io/gh/WhaleJ84/hb_organiser)
-[![Pylint](https://github.com/WhaleJ84/hb_organiser/workflows/Pylint/badge.svg)](https://github.com/WhaleJ84/hb_organiser/actions?query=workflow%3APylint)
 
 Organises Humble Bundle bundles based on their platform.
 Designed to work around the structure created via Talonius' [hb-downloader](https://github.com/talonius/hb-downloader).
